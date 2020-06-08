@@ -43,9 +43,9 @@ class ExampleTest extends TestCase
      * @param $value
      * @param $expectedResult
      *
-     * @dataProvider providerTestPushElementToArray
+     * @dataProvider providerTestPushElementToStack
      */
-    public function testPushElementToArray($capacity, $stack, $value, $expectedResult)
+    public function testPushElementToStack($capacity, $stack, $value, $expectedResult)
     {
         $url = new Example($capacity, $stack);
 
@@ -54,7 +54,7 @@ class ExampleTest extends TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function providerTestPushElementToArray()
+    public function providerTestPushElementToStack()
     {
         return [
             [5, array(), 10, array(10)],
@@ -79,9 +79,9 @@ class ExampleTest extends TestCase
      * @param $stack
      * @param $expectedResult
      *
-     * @dataProvider providerTestPopElementFromArray
+     * @dataProvider providerTestPopElementFromStack
      */
-    public function testPopElementFromArray($capacity, $stack, $expectedResult)
+    public function testPopElementFromStack($capacity, $stack, $expectedResult)
     {
         $url = new Example($capacity, $stack);
 
@@ -90,7 +90,7 @@ class ExampleTest extends TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function providerTestPopElementFromArray()
+    public function providerTestPopElementFromStack()
     {
         return [
             [5, array(1,2,3), array(1,2)],
@@ -110,9 +110,9 @@ class ExampleTest extends TestCase
      * @param $stack
      * @param $expectedResult
      *
-     * @dataProvider providerTestPeekFromArray
+     * @dataProvider providerTestPeekFromStack
      */
-    public function testPeekFromArray($capacity, $stack, $expectedResult)
+    public function testPeekFromStack($capacity, $stack, $expectedResult)
     {
         $url = new Example($capacity, $stack);
 
@@ -121,7 +121,7 @@ class ExampleTest extends TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function providerTestPeekFromArray()
+    public function providerTestPeekFromStack()
     {
         return [
             [5, array(1,2,3), 3],
@@ -141,9 +141,9 @@ class ExampleTest extends TestCase
      * @param $stack
      * @param $expectedResult
      *
-     * @dataProvider providerTestClearArray
+     * @dataProvider providerTestClearStack
      */
-    public function testClearArray($capacity, $stack, $expectedResult)
+    public function testStackArray($capacity, $stack, $expectedResult)
     {
         $url = new Example($capacity, $stack);
 
@@ -152,7 +152,7 @@ class ExampleTest extends TestCase
         $this->assertEquals($result, $expectedResult);
     }
 
-    public function providerTestClearArray()
+    public function providerTestClearStack()
     {
         return [
             [5, array(1,2,3,4), true],
@@ -173,9 +173,9 @@ class ExampleTest extends TestCase
      * @param $value
      * @param $expectedResult
      *
-     * @dataProvider providerTestArrayContainsElement
+     * @dataProvider providerTestStackContainsElement
      */
-    public function testArrayContainsElement($capacity, $stack, $value, $expectedResult)
+    public function testStackContainsElement($capacity, $stack, $value, $expectedResult)
     {
         $url = new Example($capacity, $stack);
 
@@ -184,7 +184,7 @@ class ExampleTest extends TestCase
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function providerTestArrayContainsElement()
+    public function providerTestStackContainsElement()
     {
         return [
             [5, array(1,2,3,4), 3, "Element at index 3 in stack."],
